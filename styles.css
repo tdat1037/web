@@ -1,0 +1,201 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8d7e0; /* Màu hồng nhạt (nền mặc định) */
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    background-image: url('images/hinh-nen-powerpoint-tet-14-3.jpg'); /* Đặt ảnh nền */
+    background-size: cover; /* Đảm bảo ảnh phủ hết màn hình */
+    background-position: center center; /* Căn chỉnh ảnh ở giữa */
+    background-attachment: fixed; /* Làm cho ảnh nền không di chuyển khi cuộn trang */
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    flex-direction: column; /* Đặt các phần tử trong body theo chiều dọc */
+
+}
+
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Căn các phần tử trong container theo chiều dọc */
+    justify-content: center;
+    align-items: center; /* Căn giữa các phần tử */
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 3em;
+    font-family: 'Dreaming Outloud Script Pro', cursive, sans-serif;
+
+    
+}
+/* Phần hộp chứa văn bản và nút bấm */
+.message-box {
+    background-color: rgb(252, 174, 239); /* Màu nền nhạt cho hộp */
+    padding: 20px;
+    border-radius: 10px; /* Góc bo tròn */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Bóng cho hộp */
+    width: 80%; /* Độ rộng của hộp */
+    max-width: 400px; /* Giới hạn độ rộng */
+    margin-top: 20px;
+    border: none; /* Bỏ viền */
+    font-family: 'Dreaming Outloud Script Pro', cursive, sans-serif;
+
+}
+p {
+    color: #f3f3f3; /* Màu xanh lá */
+    font-size: 1em;
+    font-family: 'Dreaming Outloud Script Pro', cursive, sans-serif;
+
+}
+/* Định dạng văn bản trong ô */
+.message-box p {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Dreaming Outloud Script Pro', cursive, sans-serif;
+
+}
+.new-message-box {
+    background-color: rgba(255, 255, 255, 0.9); /* Màu nền nhạt cho hộp */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Bóng cho hộp */
+    width: 80%; /* Độ rộng của hộp */
+    max-width: 400px; /* Giới hạn độ rộng */
+    margin-top: 20px;
+    border: none;
+    font-family: 'Dreaming Outloud Script Pro', cursive, sans-serif;
+
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-family: 'Dreaming Outloud Script Pro', cursive, sans-serif;
+
+}
+
+button:hover {
+    background-color: #db5252;
+}
+
+.falling-petals {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+#imageContainer {
+    text-align: center;  /* Căn giữa ảnh */
+    margin-top: 20px;    /* Thêm khoảng cách từ hộp văn bản đến ảnh */
+}
+
+#imageContainer img {
+    width: 100px;   /* Kích thước ảnh */
+    height: 100px;  /* Kích thước ảnh */
+}
+#text-below-image {
+    font-size: 16px;
+    color: #ffffff;
+    margin-top: 10px; /* Khoảng cách giữa ảnh và văn bản */
+}
+
+/* Hiệu ứng hoa đào rơi */
+.falling-petals {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Hoa đào - Thay đổi hình dạng */
+.petal {
+    position: absolute;
+    background-color: #ff6fb2; /* Màu hoa đào */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.6); /* Thêm hiệu ứng sáng */
+    animation: fall 6s linear infinite, rotate 2s linear infinite; /* Thêm hiệu ứng quay */
+}
+
+/* Hiệu ứng quay cánh hoa */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Animation hoa đào rơi */
+@keyframes fall {
+    0% {
+        transform: translateY(10px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Thêm nhiều cánh hoa */
+.petal:nth-child(1) {
+    left: 20%;
+    animation-duration: 8s;
+}
+
+.petal:nth-child(2) {
+    left: 50%;
+    animation-duration: 6s;
+    animation-delay: 2s;
+}
+
+.petal:nth-child(3) {
+    left: 80%;
+    animation-duration: 7s;
+    animation-delay: 4s;
+}
+
+.petal:nth-child(4) {
+    left: 10%;
+    animation-duration: 9s;
+    animation-delay: 1s;
+}
+
+.petal:nth-child(5) {
+    left: 70%;
+    animation-duration: 5s;
+    animation-delay: 3s;
+}
+
+/* Cách tạo hoa đào */
+.falling-petals .petal {
+    position: absolute;
+    background-color: #FF6FB2;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.7);
+    animation: fall 6s linear infinite;
+}
